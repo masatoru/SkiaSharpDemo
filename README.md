@@ -11,6 +11,7 @@ SkiaSharpのSampleを改変して日本語フォントと縦組みのテスト
   - Android MainActivity.OnCreate
   - iOS AppDelegate.FinishedLaunching
 + PrismのテストもかねてPrism.Formsの形式になってます。
++ UWP版は現在動作しません
 
 ### 現在の悩み
 + 縦組みのイメージで表示したい
