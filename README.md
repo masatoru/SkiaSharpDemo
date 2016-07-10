@@ -1,5 +1,4 @@
-### SkiaSharpDemo
-SkiaSharpのSampleを改変して日本語フォントと縦組みのテスト
+SkiaSharpのSampleを改変して日本語フォントと縦組みのテストです。
 
 + 元のSkiaSharpのSampleは下記
   - https://github.com/mono/SkiaSharp/tree/master/samples
