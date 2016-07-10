@@ -7,13 +7,13 @@ using System.Diagnostics;
 
 namespace SkiaSharp
 {
-	public class Demos
-	{
-    static void drawTate(SKCanvas canvas, string text, float pos_x, float pos_y,int width, int height, SKPaint paint)
+  public class Demos
+  {
+    static void drawTate(SKCanvas canvas, string text, float pos_x, float pos_y, int width, int height, SKPaint paint)
     {
       float stt_y = pos_y + paint.TextSize;
       float cur_y = stt_y;
-      float cur_x = width- paint.TextSize;    //右端
+      float cur_x = width - paint.TextSize;    //右端
       foreach (char ch in text)
       {
         canvas.DrawText(ch.ToString(), cur_x, cur_y, paint);
@@ -41,50 +41,52 @@ namespace SkiaSharp
         paint.IsAntialias = true;
         paint.TextSize = FONT_SIZE;
         paint.Typeface = tf;
+        paint.IsVerticalText = true;
         //一文字ずつ縦向きで書いていく
-        drawTate(canvas,text,0,0,width,height,paint);
+        //drawTate(canvas,text,0,0,width,height,paint);
+        canvas.DrawText(text, FONT_SIZE, 0, paint);
       }
     }
 
     [Flags]
-		public enum Platform
-		{
-			iOS = 1,
-			Android = 2,
-			OSX = 4,
-			WindowsDesktop = 8,
-			UWP = 16,
-			tvOS = 32,
-			All = 0xFFFF,
-		}
+    public enum Platform
+    {
+      iOS = 1,
+      Android = 2,
+      OSX = 4,
+      WindowsDesktop = 8,
+      UWP = 16,
+      tvOS = 32,
+      All = 0xFFFF,
+    }
 
-		public class Sample 
-		{
-			public string Title { get; internal set; }
-			public Action <SKCanvas, int, int> Method { get; internal set; }
-			public Platform Platform { get; internal set; }
-			public Action TapMethod { get; internal set; }
-		}
+    public class Sample
+    {
+      public string Title { get; internal set; }
+      public Action<SKCanvas, int, int> Method { get; internal set; }
+      public Platform Platform { get; internal set; }
+      public Action TapMethod { get; internal set; }
+    }
 
-		public static string [] SamplesForPlatform (Platform platform)
-		{
-			return sampleList.Where (s => 0 != (s.Platform & platform)).Select (s => s.Title).ToArray ();
-		}
+    public static string[] SamplesForPlatform(Platform platform)
+    {
+      return sampleList.Where(s => 0 != (s.Platform & platform)).Select(s => s.Title).ToArray();
+    }
 
-		public static Sample GetSample (string title)
-		{
-			return sampleList.Where (s => s.Title == title).First ();
-		}
+    public static Sample GetSample(string title)
+    {
+      return sampleList.Where(s => s.Title == title).First();
+    }
 
-		public static string CustomFontPath { get; set; }
+    public static string CustomFontPath { get; set; }
 
-		public static string WorkingDirectory { get; set; }
+    public static string WorkingDirectory { get; set; }
 
-		public static Action<string> OpenFileDelegate { get; set; }
+    public static Action<string> OpenFileDelegate { get; set; }
 
-		static Sample [] sampleList = new Sample[] {
+    static Sample[] sampleList = new Sample[] {
       new Sample {Title="DrawTateSample", Method = DrawTateSample, Platform = Platform.All},
     };
-	}
+  }
 }
 

@@ -4,7 +4,7 @@
     "Prism.Core": "6.2.0-pre1",
     "Prism.Forms": "6.1.0-pre6",
     "Prism.Unity.Forms": "6.2.0-pre6",
-    "SkiaSharp": "1.49.1",
+    "SkiaSharp": "1.49.4-beta",
     "Xamarin.Forms": "2.3.0.107"
   },
   "frameworks": {
