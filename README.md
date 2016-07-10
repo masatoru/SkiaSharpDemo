@@ -4,6 +4,7 @@ SkiaSharpのSampleを改変して日本語フォントと縦組みのテスト
 ### メモなど
 + 元のSkiaSharpのSampleは下記
   - https://github.com/mono/SkiaSharp/tree/master/samples
++ 実際の描画はDrawTateSampleで、その中のdrawTateで一文字ずつ縦向きに書いてます
 + 和文フォントはIPA明朝を使用(ipaexm.ttf)
   - http://mojikiban.ipa.go.jp/1300.html
   - 使用にはライセンスに同意する必要があります（念のため）
