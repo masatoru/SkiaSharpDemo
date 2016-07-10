@@ -1,7 +1,6 @@
 ### SkiaSharpDemo
 SkiaSharpのSampleを改変して日本語フォントと縦組みのテスト
 
-### メモなど
 + 元のSkiaSharpのSampleは下記
   - https://github.com/mono/SkiaSharp/tree/master/samples
 + 実際の描画はDrawTateSampleで、その中のdrawTateで一文字ずつ縦向きに書いてます
