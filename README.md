@@ -7,7 +7,7 @@ SkiaSharpのSampleを改変して日本語フォントと縦組みのテスト
 + 和文フォントはIPA明朝を使用(ipaexm.ttf)
   - http://mojikiban.ipa.go.jp/1300.html
   - 使用にはライセンスに同意する必要があります（念のため）
-+ 各OS側でフォントファイルを指定してます
++ 各OS側でフォントファイル(ipaexm.ttf)を指定してます
   - Android MainActivity.OnCreate
   - iOS AppDelegate.FinishedLaunching
 + PrismのテストもかねてPrism.Formsの形式になってます。
