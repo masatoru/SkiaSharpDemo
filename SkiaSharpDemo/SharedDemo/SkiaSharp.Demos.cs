@@ -28,13 +28,16 @@ namespace SkiaSharp
     public static void DrawTateSample(SKCanvas canvas, int width, int height)
     {
       Debug.WriteLine($"DrawTateSample width={width} height={height}");
-      Debug.WriteLine($"DrawTateSample CustomFontPath={CustomFontPath}");
 
       string text = "　いづれの御時にか、女御、更衣あまたさぶらひたまひけるなかに、いとやむごとなききはにはあらぬが、すぐれて時めきたまふありけり。はじめよりわれはと思ひあがりたまへる御かたがた、めざましきものにナシおとしめそねみたまふ。同じほど、それより下臈の更衣たちは、ましてやすからず。";
       float FONT_SIZE = 35;
 
+      WaterTrans.TypeLoader.TypefaceInfo tfi;
+      using (var fs = OpenFontStream())
+        tfi = new WaterTrans.TypeLoader.TypefaceInfo(fs);
+
       using (var paint = new SKPaint())
-      using (var tf = SKTypeface.FromFile(CustomFontPath/*,0*/))
+      using (var tf = SKTypeface.FromStream(new SKManagedStream(OpenFontStream(), true)/*,0*/))
       {
         canvas.DrawColor(SKColors.White);
 
@@ -42,9 +45,36 @@ namespace SkiaSharp
         paint.TextSize = FONT_SIZE;
         paint.Typeface = tf;
         paint.IsVerticalText = true;
+
         //一文字ずつ縦向きで書いていく
         //drawTate(canvas,text,0,0,width,height,paint);
-        canvas.DrawText(text, FONT_SIZE, 0, paint);
+        var glyphs = stringToVerticalGlyphs(text, paint, tfi);
+
+        //canvas.DrawText(text, FONT_SIZE, 0, paint);
+        drawText(canvas, glyphs, FONT_SIZE, 0, paint);
+      }
+    }
+
+    static ushort[] stringToVerticalGlyphs(string text, SKPaint paint, WaterTrans.TypeLoader.TypefaceInfo typefaceInfo)
+    {
+      ushort[] glyphs;
+      paint.Typeface.CharsToGlyphs(text, out glyphs);
+      var conv = typefaceInfo.GetVerticalGlyphConverter();
+      for (int i = 0; i < glyphs.Length; i++)
+      {
+        if (conv.CanConvert(glyphs[i]))
+          glyphs[i] = conv.Convert(glyphs[i]);
+      }
+      return glyphs;
+    }
+
+    // SKCanvas.DrawText wrapper to deal with GID
+    static unsafe void drawText(SKCanvas canvas, ushort[] glyphs, float x, float y, SKPaint paint)
+    {
+      paint.TextEncoding = SKTextEncoding.GlyphId;
+      fixed (ushort* p = glyphs)
+      {
+        canvas.DrawText((IntPtr)p, glyphs.Length * 2, x, y, paint);
       }
     }
 
@@ -78,7 +108,7 @@ namespace SkiaSharp
       return sampleList.Where(s => s.Title == title).First();
     }
 
-    public static string CustomFontPath { get; set; }
+    public static Func<System.IO.Stream> OpenFontStream { get; set; }
 
     public static string WorkingDirectory { get; set; }
 

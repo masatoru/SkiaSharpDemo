@@ -27,8 +27,9 @@ namespace SkiaSharpDemo.iOS
       // set up resource paths
       //string fontName = "content-font.ttf";
       string fontName = "ipaexm.ttf";
-      SkiaSharp.Demos.CustomFontPath = NSBundle.MainBundle.PathForResource(Path.GetFileNameWithoutExtension(fontName), Path.GetExtension(fontName));
-      Debug.WriteLine($"AppDelegate FinishedLaunching CustomFontPath={SkiaSharp.Demos.CustomFontPath}");
+      var custonFontPath = NSBundle.MainBundle.PathForResource(Path.GetFileNameWithoutExtension(fontName), Path.GetExtension(fontName));
+      Debug.WriteLine($"AppDelegate FinishedLaunching CustomFontPath={custonFontPath}");
+      SkiaSharp.Demos.OpenFontStream = () => File.OpenRead(custonFontPath);
 
       var dir = Path.Combine(Path.GetTempPath(), "SkiaSharp.Demos", Path.GetRandomFileName());
       if (!Directory.Exists(dir))
