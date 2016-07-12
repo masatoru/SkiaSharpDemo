@@ -24,9 +24,8 @@ namespace SkiaSharpDemo.UWP
     {
       // set up resource paths
       //string fontName = "content-font.ttf";
-      string fontName = "ipaexm.ttf"; 
+      string fontName = "ipaexm.ttf";
       SkiaSharp.Demos.CustomFontPath = Path.Combine(Package.Current.InstalledLocation.Path, "Assets", fontName);
-
       Debug.WriteLine($"MainPage CustomFontPath={SkiaSharp.Demos.CustomFontPath}");
 
       SkiaSharp.Demos.WorkingDirectory = ApplicationData.Current.LocalFolder.Path;
