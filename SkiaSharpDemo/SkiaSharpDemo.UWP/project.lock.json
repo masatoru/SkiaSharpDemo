@@ -1840,6 +1840,14 @@
           "lib/win8/Microsoft.Practices.Unity.dll": {}
         }
       },
+      "WaterTrans.TypeLoader/2.0.1": {
+        "compile": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
+        },
+        "runtime": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
+        }
+      },
       "Xamarin.Forms/2.3.0.107": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
@@ -3554,6 +3562,14 @@
           "lib/win8/Microsoft.Practices.Unity.dll": {}
         }
       },
+      "WaterTrans.TypeLoader/2.0.1": {
+        "compile": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
+        },
+        "runtime": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
+        }
+      },
       "Xamarin.Forms/2.3.0.107": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
@@ -5224,6 +5240,14 @@
         "runtime": {
           "lib/win8/Microsoft.Practices.Unity.RegistrationByConvention.dll": {},
           "lib/win8/Microsoft.Practices.Unity.dll": {}
+        }
+      },
+      "WaterTrans.TypeLoader/2.0.1": {
+        "compile": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
+        },
+        "runtime": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
         }
       },
       "Xamarin.Forms/2.3.0.107": {
@@ -6948,6 +6972,14 @@
           "lib/win8/Microsoft.Practices.Unity.dll": {}
         }
       },
+      "WaterTrans.TypeLoader/2.0.1": {
+        "compile": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
+        },
+        "runtime": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
+        }
+      },
       "Xamarin.Forms/2.3.0.107": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
@@ -8618,6 +8650,14 @@
         "runtime": {
           "lib/win8/Microsoft.Practices.Unity.RegistrationByConvention.dll": {},
           "lib/win8/Microsoft.Practices.Unity.dll": {}
+        }
+      },
+      "WaterTrans.TypeLoader/2.0.1": {
+        "compile": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
+        },
+        "runtime": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
         }
       },
       "Xamarin.Forms/2.3.0.107": {
@@ -10342,6 +10382,14 @@
           "lib/win8/Microsoft.Practices.Unity.dll": {}
         }
       },
+      "WaterTrans.TypeLoader/2.0.1": {
+        "compile": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
+        },
+        "runtime": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
+        }
+      },
       "Xamarin.Forms/2.3.0.107": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
@@ -12012,6 +12060,14 @@
         "runtime": {
           "lib/win8/Microsoft.Practices.Unity.RegistrationByConvention.dll": {},
           "lib/win8/Microsoft.Practices.Unity.dll": {}
+        }
+      },
+      "WaterTrans.TypeLoader/2.0.1": {
+        "compile": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
+        },
+        "runtime": {
+          "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll": {}
         }
       },
       "Xamarin.Forms/2.3.0.107": {
@@ -15563,6 +15619,16 @@
         "lib/wp80/Microsoft.Practices.Unity.xml"
       ]
     },
+    "WaterTrans.TypeLoader/2.0.1": {
+      "sha512": "c3CLJgINrEqf1iJU4/SheG6HUyHYc1QheEtVQOXvbBeIXyRolWfkAd1a1PECUa2JoofFD44I3U5UFclBjEkskg==",
+      "type": "package",
+      "path": "WaterTrans.TypeLoader/2.0.1",
+      "files": [
+        "WaterTrans.TypeLoader.2.0.1.nupkg.sha512",
+        "WaterTrans.TypeLoader.nuspec",
+        "lib/portable45-net45+win8+wpa81/WaterTrans.TypeLoader.dll"
+      ]
+    },
     "Xamarin.Forms/2.3.0.107": {
       "sha512": "M8PeslwD6Ngr1Qku5nRuk/kL2TmJKJx7DscHWPGH8Z9HR1hpb2vk0tKN0COqTJUtD0+458VKRMewWdQm14Zd6g==",
       "type": "package",
@@ -15767,6 +15833,7 @@
       "Prism.Forms >= 6.1.0-pre6",
       "Prism.Unity.Forms >= 6.2.0-pre6",
       "SkiaSharp >= 1.49.4-beta",
+      "WaterTrans.TypeLoader >= 2.0.1",
       "Xamarin.Forms >= 2.3.0.107"
     ],
     "UAP,Version=v10.0": []
