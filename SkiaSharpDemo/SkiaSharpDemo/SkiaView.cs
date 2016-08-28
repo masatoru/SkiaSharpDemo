@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using SkiaSharp;
+using System.Diagnostics;
 
 namespace Skia.Forms.Demo
 {
@@ -15,6 +16,7 @@ namespace Skia.Forms.Demo
 
 		void ISkiaViewController.SendDraw (SKCanvas canvas)
 		{
+      Debug.WriteLine("SkiaView SendDraw");
 			Draw (canvas);
 		}
 
@@ -25,7 +27,8 @@ namespace Skia.Forms.Demo
 
 		protected virtual void Draw (SKCanvas canvas)
 		{
-			sample?.Method?.Invoke (canvas, (int)Width, (int)Height);
+      Debug.WriteLine("SkiaView Draw");
+      sample?.Method?.Invoke (canvas, (int)Width, (int)Height);
 		}
 	}
 }

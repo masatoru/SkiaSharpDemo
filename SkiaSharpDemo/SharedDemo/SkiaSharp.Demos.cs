@@ -105,7 +105,8 @@ namespace SkiaSharp
 
     public static Sample GetSample(string title)
     {
-      return sampleList.Where(s => s.Title == title).First();
+      //return sampleList.Where(s => s.Title == title).First();
+      return sampleList.First();
     }
 
     public static Func<System.IO.Stream> OpenFontStream { get; set; }
